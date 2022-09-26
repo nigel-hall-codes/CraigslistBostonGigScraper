@@ -14,7 +14,7 @@ def main():
 
     gig = gig_object.GigObject()
 
-    gig.gigs = pd.read_csv(r'C:\Users\nigel\PycharmProjects\CraigslistGigScraper\data\CraigslistBostonGigs09262022.csv')
+    gig.gigs = pd.read_csv(r'..\data\CraigslistBostonGigs09262022.csv')
 
     step = craigslist_gig_step_calculate_daily_gig_income.CalculateDailyGigIncomeStep(driver, logger, gig)
     step.run()
