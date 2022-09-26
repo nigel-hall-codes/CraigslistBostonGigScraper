@@ -4,7 +4,7 @@ from steps import craigslist_gig_step_open_gigs_page, craigslist_gig_step_scrape
 import gig_object
 
 def main():
-    driver = webdriver.Chrome(executable_path="chromedriver.exe")
+    driver = webdriver.Chrome(executable_path="../drivers/chromedriver.exe")
     logger = logging.Logger("initial-view")
     stream_h = logging.StreamHandler()
     logger.addHandler(stream_h)

@@ -17,6 +17,7 @@ class CalculateDailyGigIncomeStep(Step):
             self.logger.info("Calculating daily income")
 
             df = self.gig_object.gigs
+            df.to_csv(f'../data/CraigslistBostonGigs{datetime.datetime.now().strftime("%m%d%Y")}.csv')
 
             df['day'] = df['post_datetime'].apply(
                 lambda x: datetime.datetime.strptime(x.split(".")[0], "%Y-%m-%dT%H:%M:%S").strftime("%m-%d-%Y"))
@@ -59,6 +60,7 @@ class CalculateDailyGigIncomeStep(Step):
                                             average_lump_sum_total_per_day + \
                                             average_daily_sum_per_day + \
                                             (average_weekly_sum_per_day / 5)
+
             self.logger.info(f"Total possible income per day if one did all the jobs: ${total_possible_income_per_day}")
 
         except Exception as e:
