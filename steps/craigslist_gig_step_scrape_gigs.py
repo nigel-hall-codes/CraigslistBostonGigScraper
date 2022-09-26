@@ -48,6 +48,8 @@ class ScrapeGigsStep(Step):
 
             else:
                 self.gig_object.gigs = pd.concat([self.gig_object.gigs, gigs])
+                self.gig_object.gigs.reset_index(inplace=True)
+                self.gig_object.gigs.drop("index", axis=1, inplace=True)
 
             self.step_success = True
 

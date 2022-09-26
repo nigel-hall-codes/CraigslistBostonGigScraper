@@ -13,11 +13,21 @@ class GigsDetailPage:
         self.compensation_attribute_div = (By.CLASS_NAME, "attrgroup")
 
     def post_text(self):
+
+        """
+        :return str:
+        """
+
         wait = WebDriverWait(self.driver, 5)
         post_body_div = wait.until(EC.presence_of_element_located(self.post_body))
         return post_body_div.text
 
     def compensation_attribute(self):
+
+        """
+        :return str:
+        """
+
         try:
 
             wait = WebDriverWait(self.driver, 5)

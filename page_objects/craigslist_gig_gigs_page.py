@@ -15,7 +15,9 @@ class GigsPage:
         self.driver.get("https://boston.craigslist.org/search/ggg?bundleDuplicates=1#search=1~list~0~0")
 
     def gigs(self):
-
+        """
+        :return: pd.DataFrame
+        """
         gigs_list = []
         wait = WebDriverWait(self.driver, 5)
         results_div = wait.until(EC.presence_of_element_located(self.results_div))
@@ -38,6 +40,11 @@ class GigsPage:
         button.click()
 
     def next_page_button_enabled(self):
+
+        """
+        :return: bool
+        """
+
         wait = WebDriverWait(self.driver, 5)
         button = wait.until(EC.presence_of_element_located(self.next_page_button))
 

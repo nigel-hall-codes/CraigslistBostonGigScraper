@@ -20,6 +20,7 @@ class ScrapeGigDetailPageStep(Step):
 
             compensation_attribute = self.gigs_detail_page.compensation_attribute()
 
+            # Checks for compensation attribute in post
             if compensation_attribute == None:
                 self.logger.info("Compensation attribute not found. Extracting post text")
                 text = self.gigs_detail_page.post_text()
@@ -34,6 +35,7 @@ class ScrapeGigDetailPageStep(Step):
             self.logger.info(f"Pay from post identified as {pay_from_post}")
             self.logger.info(f"Pay rate identified as {pay_rate}")
 
+            # Updates record in gigs dataframe
             self.gig_object.gigs._set_value(self.gig_object.current_gig.name, "pay_from_post", pay_from_post)
             self.gig_object.gigs._set_value(self.gig_object.current_gig.name, "pay_rate", pay_rate)
             self.gig_object.gigs._set_value(self.gig_object.current_gig.name, "Completed", True)
