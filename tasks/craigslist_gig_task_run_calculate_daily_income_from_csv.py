@@ -3,6 +3,8 @@ import logging
 from steps import craigslist_gig_step_calculate_daily_gig_income
 import gig_object
 import pandas as pd
+import sys
+sys.path.append("..")
 
 
 def main():

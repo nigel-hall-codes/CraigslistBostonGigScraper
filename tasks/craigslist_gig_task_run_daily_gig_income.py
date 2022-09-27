@@ -2,6 +2,8 @@ from selenium import webdriver
 import logging
 from steps import craigslist_gig_step_open_gigs_page, craigslist_gig_step_scrape_gigs
 import gig_object
+import sys
+sys.path.append("..")
 
 def main():
     driver = webdriver.Chrome(executable_path="../drivers/chromedriver.exe")
