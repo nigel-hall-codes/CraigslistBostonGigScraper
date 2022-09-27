@@ -6,7 +6,7 @@ Run pip install -r requirements.txt
 
 Run
 ---
-Scripts to run tasks are found in /tasks. Set your webdriver path in those files or place your chromedriver.exe in the /driver folder.
+Scripts to run tasks are found in /tasks. Set your webdriver path in those files or place your chromedriver.exe in the /drivers folder.
 
 Webscraper
 
